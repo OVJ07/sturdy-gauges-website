@@ -67,9 +67,9 @@ export default function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="tel:+919637159016" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Link href="tel:+919834583537" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <Phone className="w-4 h-4" />
-              +91 9637159016
+              +91 9834583537
             </Link>
             <Button asChild>
               <Link href="#contact">Request Quote</Link>

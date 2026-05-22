@@ -53,9 +53,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                  <a href="tel:+919637159016" className="text-muted-foreground hover:text-primary transition-colors block">
-                    +91 9637159016
-                  </a>
+                  
                   <a href="tel:+919834583537" className="text-muted-foreground hover:text-primary transition-colors block">
                     +91 9834583537
                   </a>
@@ -130,7 +128,7 @@ export default function ContactSection() {
                 >
                   <CheckCircle className="w-16 h-16 text-accent mx-auto mb-4" />
                   <h4 className="text-xl font-semibold text-foreground mb-2">Thank You!</h4>
-                  <p className="text-muted-foreground">{"We'll get back to you within 24 hours."}</p>
+                  <p className="text-muted-foreground">{"We'll get back to you soon."}</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
