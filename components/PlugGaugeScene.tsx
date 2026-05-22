@@ -29,7 +29,7 @@ function PlugGaugeModel() {
     if (!pivotRef.current) return
 
     // SCROLL ROTATION
-    gsap.to(pivotRef.current.rotation, {
+    const tween = gsap.to(pivotRef.current.rotation, {
       y: Math.PI * 12,
       ease: 'none',
       scrollTrigger: {
@@ -39,6 +39,11 @@ function PlugGaugeModel() {
         scrub: 0.3,
       },
     })
+
+    return () => {
+      tween.scrollTrigger?.kill()
+      tween.kill()
+    }
   }, [scene])
 
   return (
@@ -63,10 +68,11 @@ function PlugGaugeModel() {
 
 export default function PlugGaugeScene() {
   return (
-    <div className="fixed inset-0 -z-10 opacity-80">
+    <div className="pointer-events-none fixed inset-0 z-0 opacity-80">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 45 }}
         dpr={[1, 2]}
+        gl={{ alpha: true, antialias: true }}
       >
         {/* LIGHTING */}
         <ambientLight intensity={1.5} />
