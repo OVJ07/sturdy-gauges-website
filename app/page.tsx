@@ -9,21 +9,28 @@ import ProcessSection from "@/components/process-section"
 import TestimonialsSection from "@/components/testimonials-section"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
+import PlugGaugeScene from "@/components/PlugGaugeScene"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <HeroSection />
-      <AboutSection />
-      <ProductsSection />
-      <SpecialGaugesSection />
-      <WhyChooseUsSection />
-      <IndustriesSection />
-      <ProcessSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <Footer />
-    </main>
+    <>
+      {/* 3D Background */}
+      <PlugGaugeScene />
+
+      {/* Website Content */}
+      <main className="relative isolate z-10 min-h-screen">
+        <Header />
+        <HeroSection />
+        <AboutSection />
+        <ProductsSection />
+        <SpecialGaugesSection />
+        <WhyChooseUsSection />
+        <IndustriesSection />
+        <ProcessSection />
+        <TestimonialsSection />
+        <ContactSection />
+        <Footer />
+      </main>
+    </>
   )
 }
