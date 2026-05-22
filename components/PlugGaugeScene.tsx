@@ -30,7 +30,7 @@ function PlugGaugeModel() {
 
     // SCROLL ROTATION
     gsap.to(pivotRef.current.rotation, {
-      y: Math.PI * 20,
+      y: Math.PI * 12,
       ease: 'none',
       scrollTrigger: {
         trigger: document.body,
@@ -97,3 +97,5 @@ export default function PlugGaugeScene() {
     </div>
   )
 }
+
+useGLTF.preload('/models/plug-gauge.glb')
