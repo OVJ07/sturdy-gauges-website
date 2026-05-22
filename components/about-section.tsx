@@ -30,7 +30,7 @@ const features = [
 
 export default function AboutSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: false, amount: 0.2 })
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
     <section id="about" className="py-24 bg-background blueprint-grid">
@@ -39,7 +39,7 @@ export default function AboutSection() {
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0.3, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
             <span className="text-sm font-medium text-accent uppercase tracking-wider">About Us</span>
@@ -63,7 +63,7 @@ export default function AboutSection() {
                 <motion.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 10 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                   className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors"
                 >
@@ -82,7 +82,7 @@ export default function AboutSection() {
           {/* Right Content - Image Collage */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0.3, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >

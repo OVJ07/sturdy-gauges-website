@@ -19,7 +19,7 @@ const specialGauges = [
 
 export default function SpecialGaugesSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: false, amount: 0.2 })
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
     <section id="special-gauges" className="py-24 bg-primary">
@@ -28,7 +28,7 @@ export default function SpecialGaugesSection() {
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 15 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
@@ -47,7 +47,7 @@ export default function SpecialGaugesSection() {
             <motion.div
               key={gauge.name}
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 15 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
             >
               <Link
@@ -86,7 +86,7 @@ export default function SpecialGaugesSection() {
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 15 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12"
         >

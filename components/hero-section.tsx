@@ -16,13 +16,10 @@ const stats = [
 function AnimatedCounter({ target, suffix }: { target: number; suffix: string }) {
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLSpanElement>(null)
-  const isInView = useInView(ref, { once: false, amount: 0.5 })
+  const isInView = useInView(ref, { once: true })
 
   useEffect(() => {
-    if (!isInView) {
-      setCount(0)
-      return
-    }
+    if (!isInView) return
 
     const duration = 2000
     const steps = 60
