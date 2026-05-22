@@ -24,26 +24,21 @@ function PlugGaugeModel() {
     const box = new THREE.Box3().setFromObject(scene)
     const center = box.getCenter(new THREE.Vector3())
 
-    scene.position.set(-center.x, -center.y, -center.z)
+    scene.position.sub(center)
 
     if (!pivotRef.current) return
 
     // SCROLL ROTATION
-    const tween = gsap.to(pivotRef.current.rotation, {
-      y: Math.PI * 12,
+    gsap.to(pivotRef.current.rotation, {
+      y: Math.PI * 2,
       ease: 'none',
       scrollTrigger: {
         trigger: document.body,
         start: 'top top',
         end: 'bottom bottom',
-        scrub: 0.3,
+        scrub: 1,
       },
     })
-
-    return () => {
-      tween.scrollTrigger?.kill()
-      tween.kill()
-    }
   }, [scene])
 
   return (
@@ -68,10 +63,7 @@ function PlugGaugeModel() {
 
 export default function PlugGaugeScene() {
   return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-0 opacity-40"
-    >
+    <div className="fixed inset-0 -z-10 opacity-80">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 45 }}
         dpr={[1, 2]}
@@ -105,5 +97,3 @@ export default function PlugGaugeScene() {
     </div>
   )
 }
-
-useGLTF.preload('/models/plug-gauge.glb')
