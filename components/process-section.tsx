@@ -46,7 +46,7 @@ const steps = [
 
 export default function ProcessSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: false, margin: "-100px" })
+  const isInView = useInView(ref, { once: false, amount: 0.2 })
 
   return (
     <section id="process" className="py-24 bg-background">
@@ -55,7 +55,7 @@ export default function ProcessSection() {
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 15 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
@@ -74,7 +74,7 @@ export default function ProcessSection() {
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2" />
           <motion.div
             initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
+            animate={isInView ? { scaleX: 1 } : { scaleX: 0.3 }}
             transition={{ duration: 1.5, delay: 0.3 }}
             className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary -translate-y-1/2 origin-left"
           />
@@ -85,7 +85,7 @@ export default function ProcessSection() {
               <motion.div
                 key={step.step}
                 initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 15 }}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                 className="relative"
               >

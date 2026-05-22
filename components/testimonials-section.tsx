@@ -38,7 +38,7 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: false, margin: "-100px" })
+  const isInView = useInView(ref, { once: false, amount: 0.2 })
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextTestimonial = () => {
@@ -56,7 +56,7 @@ export default function TestimonialsSection() {
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 15 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
@@ -72,7 +72,7 @@ export default function TestimonialsSection() {
         {/* Testimonial Slider */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 15 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative max-w-4xl mx-auto"
         >

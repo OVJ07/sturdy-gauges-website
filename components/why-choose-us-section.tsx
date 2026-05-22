@@ -59,7 +59,7 @@ const features = [
 
 export default function WhyChooseUsSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: false, margin: "-100px" })
+  const isInView = useInView(ref, { once: false, amount: 0.2 })
 
   return (
     <section id="why-us" className="py-24 bg-background blueprint-grid">
@@ -68,7 +68,7 @@ export default function WhyChooseUsSection() {
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 15 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
@@ -87,7 +87,7 @@ export default function WhyChooseUsSection() {
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.3, y: 15 }}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
               className="group relative bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >
