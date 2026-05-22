@@ -9,7 +9,7 @@ import { Phone, Mail, MapPin, Globe, Send, CheckCircle } from "lucide-react"
 
 export default function ContactSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: false, margin: "-100px" })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {

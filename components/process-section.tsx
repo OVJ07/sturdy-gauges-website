@@ -46,7 +46,7 @@ const steps = [
 
 export default function ProcessSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: false, margin: "-100px" })
 
   return (
     <section id="process" className="py-24 bg-background">

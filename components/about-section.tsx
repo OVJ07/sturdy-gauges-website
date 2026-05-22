@@ -30,7 +30,7 @@ const features = [
 
 export default function AboutSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: false, margin: "-100px" })
 
   return (
     <section id="about" className="py-24 bg-background blueprint-grid">

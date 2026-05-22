@@ -19,7 +19,7 @@ const specialGauges = [
 
 export default function SpecialGaugesSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: false, margin: "-100px" })
 
   return (
     <section id="special-gauges" className="py-24 bg-primary">
