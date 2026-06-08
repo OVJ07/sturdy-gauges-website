@@ -33,7 +33,7 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="about" className="py-24 bg-background blueprint-grid">
+    <section id="about" className="py-24 bg-background dark:bg-transparent blueprint-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}

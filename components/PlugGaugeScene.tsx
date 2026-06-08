@@ -30,7 +30,7 @@ function PlugGaugeModel() {
 
     // SCROLL ROTATION
     gsap.to(pivotRef.current.rotation, {
-      y: Math.PI * 2,
+      y: Math.PI * 12,
       ease: 'none',
       scrollTrigger: {
         trigger: document.body,
@@ -63,10 +63,12 @@ function PlugGaugeModel() {
 
 export default function PlugGaugeScene() {
   return (
-    <div className="fixed inset-0 -z-10 opacity-80">
+    <div className="fixed inset-0 -z-10 bg-transparent opacity-80 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 45 }}
         dpr={[1, 2]}
+        gl={{ alpha: true, antialias: true }}
+        style={{ background: 'transparent' }}
       >
         {/* LIGHTING */}
         <ambientLight intensity={1.5} />
@@ -92,6 +94,7 @@ export default function PlugGaugeScene() {
           enableZoom={false}
           enablePan={false}
           autoRotate={false}
+          enableRotate={false}
         />
       </Canvas>
     </div>

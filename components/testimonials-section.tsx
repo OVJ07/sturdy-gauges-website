@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section className="py-24 bg-primary">
+    <section className="py-24 bg-primary dark:bg-primary/30 dark:backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -61,10 +61,10 @@ export default function TestimonialsSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-sm font-medium text-accent uppercase tracking-wider">Testimonials</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mt-3 mb-6 text-balance">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6 text-balance">
             What Our Clients Say
           </h2>
-          <p className="text-primary-foreground/70 text-lg">
+          <p className="text-foreground/70 text-lg">
             Trusted by leading manufacturers across India for precision gauge solutions.
           </p>
         </motion.div>
@@ -78,46 +78,46 @@ export default function TestimonialsSection() {
         >
           {/* Main Testimonial Card */}
           <div className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-3xl p-8 md:p-12">
-            <Quote className="w-12 h-12 text-accent mb-6 opacity-50" />
+            <Quote className="w-12 h-12 text-foreground mb-6 opacity-80" />
             
             {/* Rating */}
             <div className="flex items-center gap-1 mb-6">
               {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                <Star key={i} className="w-5 h-5 text-foreground" fill="currentColor" />
               ))}
             </div>
 
             {/* Quote */}
-            <blockquote className="text-xl md:text-2xl text-primary-foreground leading-relaxed mb-8">
+            <blockquote className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
               &ldquo;{testimonials[currentIndex].content}&rdquo;
             </blockquote>
 
             {/* Author */}
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div>
-                <p className="text-lg font-semibold text-primary-foreground">
+                <p className="text-lg font-semibold text-foreground">
                   {testimonials[currentIndex].name}
                 </p>
-                <p className="text-primary-foreground/60">
+                <p className="text-foreground/60">
                   {testimonials[currentIndex].role}, {testimonials[currentIndex].company}
                 </p>
               </div>
 
               {/* Navigation */}
               <div className="flex items-center gap-3">
-                <button
+                  <button
                   onClick={prevTestimonial}
                   className="w-12 h-12 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
                   aria-label="Previous testimonial"
                 >
-                  <ChevronLeft className="w-5 h-5 text-primary-foreground" />
+                  <ChevronLeft className="w-5 h-5 text-foreground" />
                 </button>
                 <button
                   onClick={nextTestimonial}
                   className="w-12 h-12 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
                   aria-label="Next testimonial"
                 >
-                  <ChevronRight className="w-5 h-5 text-primary-foreground" />
+                  <ChevronRight className="w-5 h-5 text-foreground" />
                 </button>
               </div>
             </div>

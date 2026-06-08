@@ -26,7 +26,7 @@ export default function ProductsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="products" className="py-24 bg-muted/30">
+    <section id="products" className="py-24 bg-muted/30 dark:bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
