@@ -22,7 +22,7 @@ export default function SpecialGaugesSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="special-gauges" className="py-24 bg-primary">
+    <section id="special-gauges" className="py-24 bg-primary dark:bg-primary/30 dark:backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

@@ -49,7 +49,7 @@ export default function ProcessSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="process" className="py-24 bg-background">
+    <section id="process" className="py-24 bg-background dark:bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

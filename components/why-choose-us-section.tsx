@@ -62,7 +62,7 @@ export default function WhyChooseUsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="why-us" className="py-24 bg-background blueprint-grid">
+    <section id="why-us" className="py-24 bg-background dark:bg-transparent blueprint-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

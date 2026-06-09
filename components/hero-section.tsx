@@ -49,7 +49,7 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary dark:bg-primary/30 dark:backdrop-blur-sm">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 blueprint-grid" />
@@ -87,14 +87,14 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="text-center">
           {/* Badge */}
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full mb-8"
           >
             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            <span className="text-sm text-primary-foreground/80">ISO 9001:2015 Certified Manufacturer</span>
+            <span className="text-sm text-foreground/80">ISO 9001:2015 Certified Manufacturer</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -102,11 +102,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-primary-foreground mb-6 text-balance"
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-6 text-balance"
           >
             Precision Carbide Gauges
             <br />
-            <span className="text-accent">Engineered for Accuracy</span>
+            <span className="text-foreground">Engineered for Accuracy</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -114,7 +114,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-primary-foreground/70 max-w-3xl mx-auto mb-10 text-pretty"
+            className="text-lg sm:text-xl text-foreground/70 max-w-3xl mx-auto mb-10 text-pretty"
           >
             Manufacturing Carbide Plug Gauges, Ring Gauges, Snap Gauges & Special Gauges Since 2011. 
             Trusted by leading industries worldwide.
@@ -154,11 +154,11 @@ export default function HeroSection() {
                 className="relative group"
               >
                 <div className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-6 hover:bg-primary-foreground/10 transition-colors">
-                  <stat.icon className="w-8 h-8 text-accent mb-3 mx-auto" />
-                  <div className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-1">
+                  <stat.icon className="w-8 h-8 text-foreground mb-3 mx-auto" />
+                  <div className="text-3xl sm:text-4xl font-bold text-foreground mb-1">
                     <AnimatedCounter target={stat.number} suffix={stat.suffix} />
                   </div>
-                  <div className="text-sm text-primary-foreground/60">{stat.label}</div>
+                  <div className="text-sm text-foreground/60">{stat.label}</div>
                 </div>
               </motion.div>
             ))}

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Phone } from "lucide-react"
+import ThemeToggle from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
@@ -48,7 +49,7 @@ export default function Header() {
             </div>
             <div className="hidden sm:block">
               <span className="text-xl font-bold text-foreground">Sturdy Gauges</span>
-              <p className="text-xs text-muted-foreground">Precision Engineering</p>
+              <p className="text-xs text-foreground">Precision Engineering</p>
             </div>
           </Link>
 
@@ -58,7 +59,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
+                className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
               >
                 {link.label}
               </Link>
@@ -67,10 +68,11 @@ export default function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="tel:+919834583537" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Link href="tel:+919834583537" className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
               <Phone className="w-4 h-4" />
               +91 9834583537
             </Link>
+            <ThemeToggle />
             <Button asChild>
               <Link href="#contact">Request Quote</Link>
             </Button>
